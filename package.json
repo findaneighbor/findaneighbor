@@ -1,0 +1,36 @@
+{
+  "name": "findaneighbor",
+  "version": "0.0.1",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel serve src/index.html",
+    "build": "parcel build src/index.html --out-dir public",
+    "stage": "now && now rm findaneighbor -ys",
+    "prod": "now --prod && now rm findaneighbor -ys"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tehpsalmist/findaneighbor.git"
+  },
+  "keywords": [
+    "parcel",
+    "react",
+    "tailwindcss",
+    "template"
+  ],
+  "author": "Ben Steward <bstewardcodes@gmail.com> (https://tehpsalmist.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tehpsalmist/findaneighbor/issues"
+  },
+  "homepage": "https://github.com/tehpsalmist/findaneighbor#readme",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "latest",
+    "parcel": "^1.12.4",
+    "tailwindcss": "latest"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
