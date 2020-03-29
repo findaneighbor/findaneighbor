@@ -2,14 +2,125 @@
 
 @tailwind components;
 
+.app-grid {
+  @apply min-h-screen grid justify-center items-center;
+  grid-template:
+    'heading' 150px
+    'main'    1fr
+    'footer'  100px
+  / 1fr;
+  justify-items: center;
+}
+
+.heading {
+  @apply w-full h-full bg-gray-100 flex justify-center items-center;
+  grid-area: heading;
+}
+
+.main {
+  @apply w-full h-full grid justify-center items-center;
+  grid-area: main;
+  grid-template:
+    'top'    auto
+    'bottom' auto
+  / 1fr;
+  row-gap: 2rem;
+  justify-items: center;
+}
+
+.top {
+  grid-area: top;
+}
+
+.bottom {
+  grid-area: bottom;
+}
+
+.all {
+  grid-row: top / bottom;
+}
+
+@screen lg {
+  .main {
+    grid-template:
+      'left right' auto
+    / 1fr   1fr;
+  }
+
+  .all {
+    grid-row: unset;
+    grid-column: left / right;
+  }
+
+  .top {
+    grid-area: unset;
+  }
+
+  .bottom {
+    grid-area: unset;
+  }
+
+  .right {
+    grid-area: right;
+  }
+
+  .left {
+    grid-area: left;
+  }
+}
+
+.footer {
+  @apply w-full h-full bg-gray-100 flex justify-center items-center;
+  grid-area: footer;
+}
+
+.btn {
+  @apply
+    inline-flex
+    items-center
+    justify-center
+    px-5
+    py-3
+    border
+    border-transparent
+    text-base
+    leading-6
+    font-medium
+    rounded-md
+    bg-gray-100
+    transition
+    duration-150
+    ease-in-out;
+}
+
+.btn:hover {
+  @apply bg-gray-200;
+}
+
+.btn:focus {
+  @apply outline-none shadow-outline;
+}
+
+.btn-secondary {
+  @apply bg-secondary-500 text-white;
+}
+
+.btn-secondary:hover {
+  @apply bg-secondary-600;
+}
+
+.btn-primary {
+  @apply bg-primary-500 text-white;
+}
+
+.btn-primary:hover {
+  @apply bg-primary-600;
+}
+
 @tailwind utilities;
 
 @responsive {
   .flex-center {
     @apply flex justify-center items-center;
-  }
-
-  .grid {
-    display: grid;
   }
 }
