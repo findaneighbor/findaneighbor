@@ -1,5 +1,5 @@
 import React from 'react'
-import { RequestForm } from '.'
+import { RequestForm } from '../components'
 
 export const RequestHelp = ({ className = '', style = {} }) => {
   return <>

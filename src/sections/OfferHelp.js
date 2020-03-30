@@ -1,5 +1,5 @@
 import React from 'react'
-import { OfferForm } from '.'
+import { OfferForm } from '../components'
 
 export const OfferHelp = ({ className = '', style = {} }) => {
   return <>
