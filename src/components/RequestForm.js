@@ -77,7 +77,7 @@ export const RequestForm = ({ className = '', style = {} }) => {
     setAddress('')
   }
 
-  return <form className='p-4 max-w-xl mx-auto' action='#' onSubmit={handleSubmit}>
+  return <form className='py-12 px-4 max-w-xl mx-auto' action='#' onSubmit={handleSubmit}>
     <h3 className='text-xl'>What need(s) do you have? <span className='text-secondary-400'>*</span></h3>
     {needTypes.map(need => <SelectNeed className='mt-2' key={need.id} need={need} updateNeed={setNeedList} needs={needList} request />)}
     <h3 className='text-xl mt-4'>How can we contact you?</h3>

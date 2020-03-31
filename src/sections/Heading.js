@@ -1,7 +1,8 @@
 import React from 'react'
+import backgroundImage from '../assets/subheader_quakertown.jpg'
 
 export const Heading = ({ className = '', style = {} }) => {
-  return <header className='heading'>
-    <h1 className='text-xl sm:text-2xl md:text-3xl text-center text-primary-500 italic'>Find a neighbor. Be a neighbor!</h1>
+  return <header className='heading flex-col py-12 px-4'>
+    <h1 className='text-2xl md:text-4xl text-center text-white font-semibold'>Find A Neighbor</h1>
   </header>
 }

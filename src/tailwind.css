@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
+
+* {
+  font-family: 'Inter', sans-serif;
+}
 
 @tailwind components;
 
 .app-grid {
   @apply min-h-screen grid justify-center items-center;
   grid-template:
-    'heading' 150px
+    'heading' auto
     'main'    1fr
     'footer'  100px
   / 1fr;
@@ -13,60 +20,27 @@
 }
 
 .heading {
-  @apply w-full h-full bg-gray-100 flex justify-center items-center;
+  @apply w-full h-full flex justify-center items-center bg-cover bg-primary-500;
   grid-area: heading;
+  background-image: linear-gradient(rgba(102, 126, 234, 0.7), rgba(102, 126, 234, 0.7)), url('/assets/subheader_quakertown.jpg');
+  background-size: cover;
+  background-position: top;
+  background-attachment: local;
+  min-height: 20vw;
+}
+
+@screen md {
+  .heading {
+    background-attachment: fixed;
+    background-size: contain;
+  }
 }
 
 .main {
-  @apply w-full h-full grid justify-center items-center;
+  @apply w-full h-full grid;
   grid-area: main;
-  grid-template:
-    'top'    auto
-    'bottom' auto
-  / 1fr;
+  grid-template-rows: auto;
   row-gap: 2rem;
-  justify-items: center;
-}
-
-.top {
-  grid-area: top;
-}
-
-.bottom {
-  grid-area: bottom;
-}
-
-.all {
-  grid-row: top / bottom;
-}
-
-@screen lg {
-  .main {
-    grid-template:
-      'left right' auto
-    / 1fr   1fr;
-  }
-
-  .all {
-    grid-row: unset;
-    grid-column: left / right;
-  }
-
-  .top {
-    grid-area: unset;
-  }
-
-  .bottom {
-    grid-area: unset;
-  }
-
-  .right {
-    grid-area: right;
-  }
-
-  .left {
-    grid-area: left;
-  }
 }
 
 .footer {
