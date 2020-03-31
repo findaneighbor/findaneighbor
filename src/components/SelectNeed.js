@@ -14,7 +14,7 @@ export const SelectNeed = ({ need, updateNeed, needs, request, offer, className 
       {request && <em className='w-full sm:ml-2 sm:w-auto'>{need.request_description}</em>}
       {offer && <em className='w-full sm:ml-2 sm:w-auto'>{need.offer_description}</em>}
     </label>
-    {checked && <textarea placeholder={request ? 'Please describe your need in detail.' : 'Please describe in detail how you can help.'} className='form-description' value={needs[need.id]?.description || ''} onChange={e => {
+    {checked && <textarea placeholder={request ? 'Briefly describe your need.' : 'Please describe how you can help.'} className='form-description' value={needs[need.id]?.description || ''} onChange={e => {
       const description = e.target.value
 
       updateNeed(ns => ({ ...ns, [need.id]: { ...ns[need.id], description } }))
