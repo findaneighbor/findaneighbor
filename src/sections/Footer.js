@@ -13,6 +13,6 @@ export const Footer = ({ className = '', style = {} }) => {
       <br />
       <em>Choose "Easter" in the Fund Dropdown.</em>
     </p>
-    <p className='copy'>&copy; Find A Neighbor {year}</p>
+    <p className='copy'>&copy; <NavLink to='/'>Find A Neighbor</NavLink> {year}</p>
   </div>
 }
