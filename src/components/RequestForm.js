@@ -8,7 +8,7 @@ const isDigitRegex = /^\d$/
 const isEmailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
 const isZipRegex = /^[0-9-]*$/
 
-export const RequestForm = ({ className = '', style = {} }) => {
+export const RequestForm = ({ className = '', style = {}, onSubmit = e => null }) => {
   const { data: { need_type: needTypes = [] } = {}, error: queryError } = useQuery(NEED_TYPES)
   const [addRequest, { error: mutationError, loading }] = useMutation(ADD_REQUEST)
 
@@ -75,6 +75,8 @@ export const RequestForm = ({ className = '', style = {} }) => {
     setEmail('')
     setZip('18951')
     setAddress('')
+
+    onSubmit(result.data)
   }
 
   return <form className='max-w-xl mx-auto' action='#' onSubmit={handleSubmit}>

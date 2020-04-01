@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Disclaimer = ({ className = '', style = {} }) => {
   return <div className={`max-w-xl mx-auto ${className}`}>
-    <div className='border border-secondary-300 p-2'>
+    <div className='p-2 border border-secondary-300 rounded'>
       <p className='mb-4'>
         <span className='underline'>Note:</span> Find A Neighbor connects neighbors, not professionals. We do not seek to provide emergency or mental health crisis services. Rather, we partner with existing agencies who are experts in these areas.
       </p>

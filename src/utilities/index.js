@@ -1,21 +1,28 @@
-export const getLocalJSON = key => {
-  try {
-    const val = localStorage.getItem(key)
+export const getSubmissionStatus = key => {
+  const val = localStorage.getItem(key)
 
-    return JSON.parse(val) || ''
-  } catch (e) {
-    return ''
+  if (!val) {
+    return false
   }
+
+  const expired = Number(localStorage.getItem(`${key}.ttl`))
+
+  if (expired > Date.now()) {
+    return true
+  }
+
+  localStorage.removeItem(key)
+  localStorage.removeItem(`${key}.ttl`)
+
+  return false
 }
 
-export const setLocalJSON = (key, value) => {
-  try {
-    const val = JSON.stringify(value)
-
-    localStorage.setItem(key, val)
-
-    return true
-  } catch (e) {
-    return false
+export const setSubmissionStatus = (key, value) => {
+  if (value) {
+    localStorage.setItem(key, value)
+    localStorage.setItem(`${key}.ttl`, Date.now() + (1000 * 60 * 30))
+  } else {
+    localStorage.removeItem(key)
+    localStorage.removeItem(`${key}.ttl`)
   }
 }
