@@ -6,7 +6,7 @@ export const Disclaimer = ({ className = '', style = {} }) => {
       <p className='mb-4'>
         <span className='underline'>Note:</span> Find A Neighbor connects neighbors, not professionals. We do not seek to provide emergency or mental health crisis services. Rather, we partner with existing agencies who are experts in these areas.
       </p>
-      <ul className='pl-4'>
+      <ul className='pl-4 mb-4'>
         <li className='mb-2'>
           <em>Are you experiencing a true emergency?</em>
           <strong className='ml-2 font-semibold'>Call 911.</strong>
@@ -20,6 +20,7 @@ export const Disclaimer = ({ className = '', style = {} }) => {
           <strong className='ml-2 font-semibold'>Call the Bucks County Housing Link at 1-800-810-4434.</strong>
         </li>
       </ul>
+      <p>In the current context, Find A Neighbor desires to honor social distancing in our interactions.</p>
     </div>
   </div>
 }
