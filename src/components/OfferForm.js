@@ -39,13 +39,17 @@ export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) 
   const [address, setAddress] = useState('')
 
   const [affiliations, setAffiliations] = useState('')
+  const [motivation, setMotivation] = useState('')
   const [background, setBackground] = useState('')
+
+  const [advocate, setAdvocate] = useState(false)
 
   const formValid = ((email && emailValid) || (phone && phoneValid)) &&
     (zip && zipValid) &&
     name &&
     address &&
     affiliations &&
+    motivation &&
     background &&
     Object.keys(needList).some(id => needList[id].selected && needList[id].description)
 
@@ -70,7 +74,9 @@ export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) 
         email: email || null,
         textPermission: phone ? textPermission : null,
         background,
-        affiliations
+        motivation,
+        affiliations,
+        advocate
       }
     })
       .catch(err => err instanceof Error ? err : new Error(JSON.stringify(err)))
@@ -87,7 +93,9 @@ export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) 
     setZip('18951')
     setAddress('')
     setAffiliations('')
+    setMotivation('')
     setBackground('')
+    setAdvocate(false)
 
     onSubmit()
   }
@@ -105,6 +113,9 @@ export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) 
     <h3 className='text-xl mt-4'>Tell us more about yourself.</h3>
     <TextArea className='mb-4' label='Are you affiliated or involved with other churches or non-profits? If so, list them here.' value={affiliations} onChange={setAffiliations} required />
     <TextArea className='mb-4' label='Do you have any personal or professional experience in the area you are offering to help?' value={background} onChange={setBackground} required />
+    <TextArea className='mb-8' label='What motivates you to get involved in service to others?' value={motivation} onChange={setMotivation} required />
+    <Checkbox className='mb-2' label='Are you interested in being a Neighborhood Advocate?' value={advocate} onChange={setAdvocate} />
+    <p className='text-justify mb-8'>Neighborhood Advocates are those looking to invest more time in their neighborhood and would be willing to help coordinate connections and services in their local area.</p>
     <button type='submit' disabled={loading || !formValid} className='my-6 btn btn-primary'>Submit</button>
     <p className='text-secondary-400'>
       <em className='block mb-4'>

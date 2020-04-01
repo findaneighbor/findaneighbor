@@ -7,8 +7,8 @@ export const ADD_REQUEST = `
 `
 
 export const ADD_OFFER = `
-  mutation AddOffer($needs: [offer_need_insert_input!]!, $address: String!, $name: String!, $phone: String, $zip: String!, $email: String, $textPermission: Boolean, $background: String!, $affiliations: String!) {
-    insert_offer_to_help(objects: {address: $address, email: $email, name: $name, background: $background, affiliations: $affiliations, offer_needs: {data: $needs}, zip: $zip, text_permission: $textPermission, phone: $phone}) {
+  mutation AddOffer($needs: [offer_need_insert_input!]!, $address: String!, $name: String!, $phone: String, $zip: String!, $email: String, $textPermission: Boolean, $background: String!, $affiliations: String!, $motivation: String!, $advocate: Boolean) {
+    insert_offer_to_help(objects: {address: $address, email: $email, name: $name, background: $background, affiliations: $affiliations, motivation: $motivation, advocate: $advocate, offer_needs: {data: $needs}, zip: $zip, text_permission: $textPermission, phone: $phone}) {
       affected_rows
     }
   }
