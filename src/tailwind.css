@@ -13,7 +13,7 @@
   grid-template:
     'heading' auto
     'main'    1fr
-    'footer'  100px
+    'footer'  auto
   / 1fr;
   justify-items: center;
 }
@@ -28,13 +28,6 @@
   min-height: 20vw;
 }
 
-@screen md {
-  .heading {
-    background-attachment: fixed;
-    background-size: contain;
-  }
-}
-
 .main {
   @apply w-full h-full grid;
   grid-area: main;
@@ -43,8 +36,53 @@
 }
 
 .footer {
-  @apply w-full h-full bg-gray-100 flex justify-center items-center;
+  @apply
+    w-full
+    h-full
+    bg-gray-100
+    grid
+    justify-center
+    items-center
+    row-gap-6
+    col-gap-2
+    py-12
+    px-4
+    text-center
+    text-secondary-500;
   grid-area: footer;
+  justify-items: center;
+  grid-template:
+    'email' auto
+    'faq'   auto
+    'copy'  auto
+  / 1fr;
+}
+
+.email {
+  grid-area: email;
+}
+
+.copy {
+  grid-area: copy;
+}
+
+.faq {
+  grid-area: faq;
+}
+
+@screen md {
+  .heading {
+    background-attachment: fixed;
+    background-size: contain;
+  }
+}
+
+@screen lg {
+  .footer {
+    grid-template:
+      'email copy faq' 1fr
+    / 1fr    auto  1fr;
+  }
 }
 
 .btn {

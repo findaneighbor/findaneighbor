@@ -39,14 +39,14 @@ export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) 
   const [address, setAddress] = useState('')
 
   const [affiliations, setAffiliations] = useState('')
-  const [motivation, setMotivation] = useState('')
+  const [background, setBackground] = useState('')
 
-  const formValid = name &&
-    ((email && emailValid) || (phone && phoneValid)) &&
+  const formValid = ((email && emailValid) || (phone && phoneValid)) &&
     (zip && zipValid) &&
+    name &&
     address &&
     affiliations &&
-    motivation &&
+    background &&
     Object.keys(needList).some(id => needList[id].selected && needList[id].description)
 
   const handleSubmit = async e => {
@@ -69,7 +69,7 @@ export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) 
         phone: phone || null,
         email: email || null,
         textPermission: phone ? textPermission : null,
-        motivation,
+        background,
         affiliations
       }
     })
@@ -87,7 +87,7 @@ export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) 
     setZip('18951')
     setAddress('')
     setAffiliations('')
-    setMotivation('')
+    setBackground('')
 
     onSubmit()
   }
@@ -104,8 +104,15 @@ export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) 
     <TextInput className='mb-4' label='Street Address' value={address} onChange={setAddress} required />
     <h3 className='text-xl mt-4'>Tell us more about yourself.</h3>
     <TextArea className='mb-4' label='Are you affiliated or involved with other churches or non-profits? If so, list them here.' value={affiliations} onChange={setAffiliations} required />
-    <TextArea className='mb-4' label='What motivates you to get involved in your neighborhood this way?' value={motivation} onChange={setMotivation} required />
+    <TextArea className='mb-4' label='Do you have any personal or professional experience in the area you are offering to help?' value={background} onChange={setBackground} required />
     <button type='submit' disabled={loading || !formValid} className='my-6 btn btn-primary'>Submit</button>
-    <p className='text-secondary-400'><em>Your privacy and safety is very important to us. The information you choose to share here will not be passed along to anyone without your direct and explicit consent. After you submit this information, we will keep an eye out for a neighbor who needs the kind of help you can provide. If we think a good connection can be made, we will contact you directly and let you decide if the fit is good before sharing anything with that person.</em></p>
+    <p className='text-secondary-400'>
+      <em className='block mb-4'>
+        After you submit this information, we will keep an eye out for a neighbor who needs the kind of help you can provide. If we think a good connection can be made, we will contact you directly and let you decide if the fit is good before sharing anything with that person.
+      </em>
+      <em>
+        Your privacy and safety is very important to us. The information you choose to share here will not be passed along to anyone without your direct and explicit consent.
+      </em>
+    </p>
   </form>
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react'
 import { useQuery, useMutation } from 'graphql-hooks'
 import { NEED_TYPES } from '../graphql/queries'
-import { SelectNeed, TextInput, Checkbox } from '.'
+import { SelectNeed, TextInput, Checkbox, TextArea } from '.'
 import { ADD_REQUEST } from '../graphql'
 
 const isDigitRegex = /^\d$/
@@ -38,7 +38,14 @@ export const RequestForm = ({ className = '', style = {}, onSubmit = e => null }
 
   const [address, setAddress] = useState('')
 
-  const formValid = name && ((email && emailValid) || (phone && phoneValid)) && address && (zip && zipValid) && Object.keys(needList).some(id => needList[id].selected && needList[id].description)
+  const [affiliations, setAffiliations] = useState('')
+
+  const formValid = ((email && emailValid) || (phone && phoneValid)) &&
+    (zip && zipValid) &&
+    name &&
+    address &&
+    affiliations &&
+    Object.keys(needList).some(id => needList[id].selected && needList[id].description)
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -59,7 +66,8 @@ export const RequestForm = ({ className = '', style = {}, onSubmit = e => null }
         zip,
         phone: phone || null,
         email: email || null,
-        textPermission: phone ? textPermission : null
+        textPermission: phone ? textPermission : null,
+        affiliations
       }
     })
       .catch(err => err instanceof Error ? err : new Error(JSON.stringify(err)))
@@ -75,6 +83,7 @@ export const RequestForm = ({ className = '', style = {}, onSubmit = e => null }
     setEmail('')
     setZip('18951')
     setAddress('')
+    setAffiliations('')
 
     onSubmit(result.data)
   }
@@ -89,7 +98,16 @@ export const RequestForm = ({ className = '', style = {}, onSubmit = e => null }
     <TextInput className='mb-4' label='Email' type='email' value={email} onChange={setEmail} required={!phone} />
     <TextInput className='mb-4' label='Zip Code' pattern='[0-9-]*' value={zip} onChange={setZip} required />
     <TextInput className='mb-4' label='Street Address' value={address} onChange={setAddress} required />
+    <h3 className='text-xl mt-4'>Tell us more about yourself.</h3>
+    <TextArea className='mb-4' label='Are you affiliated or involved with other churches or non-profits? If so, list them here.' value={affiliations} onChange={setAffiliations} required />
     <button type='submit' disabled={loading || !formValid} className='my-6 btn btn-primary'>Submit</button>
-    <p className='text-secondary-400'><em>Your privacy and safety is very important to us. The information you choose to share here will not be passed along to anyone without your direct and explicit consent. After you submit this information, we will keep an eye out for a neighbor who can help in a way that matches your needs. If we think a good connection can be made, we will contact you directly and let you decide if the fit is good before sharing anything with that person.</em></p>
+    <p className='text-secondary-400'>
+      <em className='block mb-4'>
+        After you submit this information, we will keep an eye out for a neighbor who can help in a way that matches your needs. If we think a good connection can be made, we will contact you directly and let you decide if the fit is good before sharing anything with that person.
+      </em>
+      <em>
+        Your privacy and safety is very important to us. The information you choose to share here will not be passed along to anyone without your direct and explicit consent.
+      </em>
+    </p>
   </form>
 }

@@ -6,20 +6,18 @@ import { GraphQLProvider } from '../graphql/context'
 export const Main = ({ className = '', style = {} }) => {
   return <main className='main'>
     <GraphQLProvider>
-      <Router>
-        <Switch>
-          <Route path='/request-help'>
-            <RequestHelp />
-          </Route>
-          <Route path='/offer-help'>
-            <OfferHelp />
-          </Route>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Redirect to='/' />
-        </Switch>
-      </Router>
+      <Switch>
+        <Route path='/request-help'>
+          <RequestHelp />
+        </Route>
+        <Route path='/offer-help'>
+          <OfferHelp />
+        </Route>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Redirect to='/' />
+      </Switch>
     </GraphQLProvider>
   </main>
 }
