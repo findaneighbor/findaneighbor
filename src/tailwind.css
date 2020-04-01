@@ -53,7 +53,7 @@
   justify-items: center;
   grid-template:
     'email' auto
-    'faq'   auto
+    'give'   auto
     'copy'  auto
   / 1fr;
 }
@@ -66,8 +66,8 @@
   grid-area: copy;
 }
 
-.faq {
-  grid-area: faq;
+.give {
+  grid-area: give;
 }
 
 @screen md {
@@ -80,7 +80,7 @@
 @screen lg {
   .footer {
     grid-template:
-      'email copy faq' 1fr
+      'email copy give' 1fr
     / 1fr    auto  1fr;
   }
 }

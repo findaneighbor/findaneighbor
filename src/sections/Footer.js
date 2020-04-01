@@ -6,16 +6,13 @@ const year = new Date().getFullYear()
 export const Footer = ({ className = '', style = {} }) => {
   return <div style={style} className={`footer ${className}`}>
     <p className='email'>
-      Questions? Email us:
+      Questions? <a className='text-primary-500 underline' href='mailto:findaneighbor@gmail.com'>Email us.</a>
+    </p>
+    <p className='give text-center'>
+      <a className='text-primary-500 underline' href='https://escregistrations.churchcenter.com/giving'>Give.</a>
       <br />
-      <a href='mailto:findaneighbor@gmail.com'>findaneighbor@gmail.com</a>
+      <em>Choose "Easter" in the Fund Dropdown.</em>
     </p>
     <p className='copy'>&copy; Find A Neighbor {year}</p>
-    <div className='faq flex-center flex-col text-primary-400 lg:text-secondary-500'>
-      <NavLink to='/'>Home</NavLink>
-      <NavLink to='/request-help'>Request Help</NavLink>
-      <NavLink to='/offer-help'>Offer Help</NavLink>
-      <NavLink to='/faq'>FAQ and Best Practices</NavLink>
-    </div>
   </div>
 }
