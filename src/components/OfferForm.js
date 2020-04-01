@@ -90,7 +90,7 @@ export const OfferForm = ({ className = '', style = {} }) => {
     setMotivation('')
   }
 
-  return <form className='py-12 px-4 max-w-xl mx-auto' action='#' onSubmit={handleSubmit}>
+  return <form className='max-w-xl mx-auto' action='#' onSubmit={handleSubmit}>
     <h3 className='text-xl'>How can you help? <span className='text-secondary-400'>*</span></h3>
     {needTypes.map(need => <SelectNeed className='mt-2' key={need.id} need={need} updateNeed={setNeedList} needs={needList} offer />)}
     <h3 className='text-xl mt-4'>How can we contact you?</h3>
@@ -103,7 +103,7 @@ export const OfferForm = ({ className = '', style = {} }) => {
     <h3 className='text-xl mt-4'>Tell us more about yourself.</h3>
     <TextArea className='mb-4' label='Are you affiliated or involved with other churches or non-profits? If so, list them here.' value={affiliations} onChange={setAffiliations} required />
     <TextArea className='mb-4' label='What motivates you to get involved in your neighborhood this way?' value={motivation} onChange={setMotivation} required />
-    <button type='submit' disabled={loading || !formValid} className='mt-8 btn btn-primary'>Submit</button>
-    <p className='mt-4 text-secondary-400'><em>Your privacy and safety is very important to us. The information you choose to share here will not be passed along to anyone without your direct and explicit consent. After you submit this information, we will keep an eye out for a neighbor who needs the kind of help you can provide. If we think a good connection can be made, we will contact you directly and let you decide if the fit is good before sharing anything with that person.</em></p>
+    <button type='submit' disabled={loading || !formValid} className='my-6 btn btn-primary'>Submit</button>
+    <p className='text-secondary-400'><em>Your privacy and safety is very important to us. The information you choose to share here will not be passed along to anyone without your direct and explicit consent. After you submit this information, we will keep an eye out for a neighbor who needs the kind of help you can provide. If we think a good connection can be made, we will contact you directly and let you decide if the fit is good before sharing anything with that person.</em></p>
   </form>
 }

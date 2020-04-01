@@ -77,7 +77,7 @@ export const RequestForm = ({ className = '', style = {} }) => {
     setAddress('')
   }
 
-  return <form className='py-12 px-4 max-w-xl mx-auto' action='#' onSubmit={handleSubmit}>
+  return <form className='max-w-xl mx-auto' action='#' onSubmit={handleSubmit}>
     <h3 className='text-xl'>What need(s) do you have? <span className='text-secondary-400'>*</span></h3>
     {needTypes.map(need => <SelectNeed className='mt-2' key={need.id} need={need} updateNeed={setNeedList} needs={needList} request />)}
     <h3 className='text-xl mt-4'>How can we contact you?</h3>
@@ -87,7 +87,7 @@ export const RequestForm = ({ className = '', style = {} }) => {
     <TextInput className='mb-4' label='Email' type='email' value={email} onChange={setEmail} required={!phone} />
     <TextInput className='mb-4' label='Zip Code' pattern='[0-9-]*' value={zip} onChange={setZip} required />
     <TextInput className='mb-4' label='Street Address' value={address} onChange={setAddress} required />
-    <button type='submit' disabled={loading || !formValid} className='mt-8 btn btn-primary'>Submit</button>
-    <p className='mt-4 text-secondary-400'><em>Your privacy and safety is very important to us. The information you choose to share here will not be passed along to anyone without your direct and explicit consent. After you submit this information, we will keep an eye out for a neighbor who can help in a way that matches your needs. If we think a good connection can be made, we will contact you directly and let you decide if the fit is good before sharing anything with that person.</em></p>
+    <button type='submit' disabled={loading || !formValid} className='my-6 btn btn-primary'>Submit</button>
+    <p className='text-secondary-400'><em>Your privacy and safety is very important to us. The information you choose to share here will not be passed along to anyone without your direct and explicit consent. After you submit this information, we will keep an eye out for a neighbor who can help in a way that matches your needs. If we think a good connection can be made, we will contact you directly and let you decide if the fit is good before sharing anything with that person.</em></p>
   </form>
 }

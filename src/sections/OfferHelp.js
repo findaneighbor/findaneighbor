@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { OfferForm } from '../components'
+import { OfferForm, Disclaimer } from '../components'
 
 export const OfferHelp = ({ className = '', style = {} }) => {
   useEffect(() => {
@@ -8,7 +8,8 @@ export const OfferHelp = ({ className = '', style = {} }) => {
     })
   }, [])
 
-  return <div className='all min-h-md w-full'>
+  return <div className='py-12 px-4 w-full'>
+    <Disclaimer className='mb-12' />
     <OfferForm />
   </div>
 }
