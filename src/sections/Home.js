@@ -9,7 +9,7 @@ export const Home = ({ className = '', style = {} }) => {
     <div className='py-12 px-4 flex-center flex-col bg-white'>
       <FontAwesomeIcon icon={faHandsHelping} className='mb-8 text-5xl text-primary-500' />
       <h2 className='text-justify max-w-xl'>
-        Find A Neighbor connects neighbors in need with neighbors willing to meet needs. Imagine the beauty of neighbors helping neighbors, especially at a time like now!
+        Connecting neighbors in need with neighbors willing to meet needs
       </h2>
     </div>
     <div className='py-12 px-4 flex-center flex-col bg-primary-500 text-white'>
