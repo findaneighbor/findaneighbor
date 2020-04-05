@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { RequestForm, Disclaimer } from '../components'
 import { setSubmissionStatus, getSubmissionStatus } from '../utilities'
+import { useTitle } from '../hooks'
 
 export const RequestHelp = ({ className = '', style = {} }) => {
+  useTitle('Find A Neighbor | Request Help')
+
   const [submittedRequest, setSubmittedRequest] = useState(getSubmissionStatus('requestForHelpSubmitted'))
 
   const onSubmit = () => {

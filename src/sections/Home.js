@@ -3,8 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandHoldingHeart, faHandsHelping, faUserFriends } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
 import { client, NEED_TYPES } from '../graphql'
+import { useTitle } from '../hooks'
 
 export const Home = ({ className = '', style = {} }) => {
+  useTitle('Find A Neighbor')
+
   return <>
     <div className='py-12 px-4 flex-center flex-col bg-white'>
       <FontAwesomeIcon icon={faHandsHelping} className='mb-8 text-5xl text-primary-500' />

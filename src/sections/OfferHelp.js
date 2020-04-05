@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { OfferForm, Disclaimer } from '../components'
 import { getSubmissionStatus, setSubmissionStatus } from '../utilities'
+import { useTitle } from '../hooks'
 
 export const OfferHelp = ({ className = '', style = {} }) => {
+  useTitle('Find A Neighbor | Offer Help')
+
   const [submittedOffer, setSubmittedOffer] = useState(getSubmissionStatus('offerToHelpSubmitted'))
 
   const onSubmit = () => {
