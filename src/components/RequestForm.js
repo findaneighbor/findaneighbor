@@ -64,7 +64,7 @@ export const RequestForm = ({ className = '', style = {}, onSubmit = e => null }
         name,
         address,
         zip,
-        phone: phone || null,
+        phone: phone.split('').filter(c => isDigitRegex.test(c)).slice(0, 10).join('') || null,
         email: email || null,
         textPermission: phone ? textPermission : null,
         affiliations
@@ -87,6 +87,16 @@ export const RequestForm = ({ className = '', style = {}, onSubmit = e => null }
 
     onSubmit(result.data)
   }
+
+  useEffect(() => {
+    const realPhone = phone.split('').filter(c => isDigitRegex.test(c)).join('')
+
+    if (realPhone.charAt(0) === '1') {
+      return setPhone(realPhone.slice(1, 11))
+    }
+
+    setPhone(realPhone.slice(0, 10))
+  }, [phone])
 
   return <form className='max-w-xl mx-auto' action='#' onSubmit={handleSubmit}>
     <h3 className='text-xl'>What need(s) do you have? <span className='text-secondary-400'>*</span></h3>
