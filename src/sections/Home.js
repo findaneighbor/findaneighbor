@@ -11,7 +11,7 @@ export const Home = ({ className = '', style = {} }) => {
   return <>
     <div className='py-12 px-4 flex-center flex-col bg-white'>
       <FontAwesomeIcon icon={faHandsHelping} className='mb-8 text-5xl text-primary-500' />
-      <h2 className='text-justify max-w-xl'>
+      <h2 className='text-center max-w-xl'>
         Connecting neighbors in need with neighbors willing to meet needs in the Quakertown and Upper Bucks region
       </h2>
     </div>
