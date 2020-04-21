@@ -9,7 +9,7 @@ export const Footer = ({ className = '', style = {} }) => {
       Questions? <a className='text-primary-500 underline' href='mailto:findaneighbor@gmail.com'>Email us.</a>
     </p>
     <p className='give text-center'>
-      <a className='text-primary-500 underline' href='https://escregistrations.churchcenter.com/giving/to/find-a-neighbor'>Give</a>.
+      <a className='text-primary-500 underline' href='https://escregistrations.churchcenter.com/giving/to/find-a-neighbor'>Give</a> to the Cause.
       <br />
     </p>
     <p className='copy'>&copy; <NavLink to='/'>Find A Neighbor</NavLink> {year}</p>
