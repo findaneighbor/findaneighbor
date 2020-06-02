@@ -3,8 +3,10 @@ import { RequestForm, Disclaimer } from '../components'
 import { setSubmissionStatus, getSubmissionStatus } from '../utilities'
 import { useTitle } from '../hooks'
 
+const title = process.env.NODE_ENV === 'production' ? 'Find A Neighbor | Request Help' : 'Local | Find A Neighbor | Request Help'
+
 export const RequestHelp = ({ className = '', style = {} }) => {
-  useTitle('Find A Neighbor | Request Help')
+  useTitle(title)
 
   const [submittedRequest, setSubmittedRequest] = useState(getSubmissionStatus('requestForHelpSubmitted'))
 

@@ -26,3 +26,11 @@ export const setSubmissionStatus = (key, value) => {
     localStorage.removeItem(`${key}.ttl`)
   }
 }
+
+export const externalHref = url => {
+  if (url?.match(/^http:\/\/|^https:\/\//)) {
+    return url
+  }
+
+  return `https://${url}`
+}
