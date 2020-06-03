@@ -14,13 +14,13 @@ export const DisplayPartner = ({ className = '', style = {}, partner = {} }) => 
     {partner.mission_statement && <p className='mb-4'>{partner.mission_statement}</p>}
     <div className='flex flex-col sm:flex-row mb-4'>
       {hasContact && <div className='w-full sm:w-1/2 sm:pr-2'>
-        <h4 className='text-lg underline font-medium'>Contact</h4>
+        <h4 className='text-lg font-medium'>Contact</h4>
         <strong>{partner.contact_name}</strong>
         <p>{partner.contact_email}</p>
         <p>{partner.contact_phone}</p>
       </div>}
       {hasAddress && <div className={`w-full sm:w-1/2 ${hasContact ? 'sm:pl-2' : ''}`}>
-        <h4 className='text-lg underline font-medium'>Location</h4>
+        <h4 className='text-lg font-medium'>Location</h4>
         <p>{partner.address}</p>
         <p>
           {partner.city}{partner.city && partner.state && ', '}{partner.state}{(partner.city || partner.state) && ' '}{partner.zip}
