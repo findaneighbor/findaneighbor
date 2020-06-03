@@ -32,7 +32,6 @@
   @apply w-full h-full grid;
   grid-area: main;
   grid-template-rows: auto;
-  row-gap: 2rem;
 }
 
 .footer {

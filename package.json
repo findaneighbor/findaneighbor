@@ -27,7 +27,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "latest",
     "parcel": "^1.12.4",
-    "tailwindcss": "latest"
+    "tailwindcss": "^1.4.6"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
