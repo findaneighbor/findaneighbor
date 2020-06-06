@@ -3,8 +3,10 @@ import { OfferForm, Disclaimer } from '../components'
 import { getSubmissionStatus, setSubmissionStatus } from '../utilities'
 import { useTitle } from '../hooks'
 
+const title = process.env.NODE_ENV === 'production' ? 'Find A Neighbor | Offer Help' : 'Local | Find A Neighbor | Offer Help'
+
 export const OfferHelp = ({ className = '', style = {} }) => {
-  useTitle('Find A Neighbor | Offer Help')
+  useTitle(title)
 
   const [submittedOffer, setSubmittedOffer] = useState(getSubmissionStatus('offerToHelpSubmitted'))
 
