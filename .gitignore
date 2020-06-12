@@ -4,3 +4,4 @@ public
 dist
 apollo.config.js
 .env
+.vscode
