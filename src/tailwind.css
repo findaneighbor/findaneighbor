@@ -81,8 +81,6 @@
   @apply block;
 }
 
-
-
 @screen md {
   .heading {
     background-attachment: fixed;
