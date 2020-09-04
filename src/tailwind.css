@@ -69,6 +69,18 @@
   grid-area: give;
 }
 
+#google_translate_element {
+  @apply mt-2;
+}
+
+#google_translate_element * {
+  @apply inline;
+}
+
+#google_translate_element #\:0\.targetLanguage {
+  @apply block;
+}
+
 @screen md {
   .heading {
     background-attachment: fixed;
