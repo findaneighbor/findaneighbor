@@ -35,3 +35,14 @@ export const PARTNERS = `
     }
   }
 `
+
+export const SUCCESS_STORIES = `
+  query successStories {
+    success_story (order_by: { order: asc }) {
+      id
+      anonymized_name
+      testimonial
+      location
+    }
+  }
+`
