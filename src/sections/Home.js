@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandHoldingHeart, faHandsHelping, faUserFriends, faPeopleCarry } from '@fortawesome/free-solid-svg-icons'
+import { faHandHoldingHeart, faHandsHelping, faUserFriends, faPeopleCarry, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
 import { client, NEED_TYPES } from '../graphql'
 import { useTitle } from '../hooks'
@@ -37,6 +37,13 @@ export const Home = ({ className = '', style = {} }) => {
         There are fantastic organizations already busy serving our neighbors in the Upper Bucks region. Check them out and consider how you might support their mission.
       </p>
       <NavLink className='btn text-primary-500' to='/partners'>View Volunteer Opportunities</NavLink>
+    </div>
+    <div className='py-16 px-4 flex-center flex-col bg-white'>
+      <FontAwesomeIcon icon={faThumbsUp} className='mb-8 text-5xl text-primary-500' />
+      <p className='text-justify max-w-xl mb-8'>
+        Read about real examples of how your neighbors have already been a blessing to each other.
+      </p>
+      <NavLink className='btn btn-primary' to='/success-stories'>Success Stories</NavLink>
     </div>
   </>
 }
