@@ -1,6 +1,13 @@
 const { theme: { colors } } = require('tailwindcss/defaultConfig')
 
 module.exports = {
+  purge: {
+    enable: true,
+    content: ['./src/index.html', './src/**/*.js'],
+    options: {
+      whitelist: ['google_translate_element', 'goog-te-gadget', 'goog-te-combo']
+    }
+  },
   theme: {
     extend: {
       colors: {
