@@ -101,8 +101,8 @@ blockquote.after-quote:after {
   @apply inline;
 }
 
-#google_translate_element #\:0\.targetLanguage {
-  @apply block;
+.goog-te-gadget .goog-te-combo {
+  @apply block !important;
 }
 
 @screen md {
