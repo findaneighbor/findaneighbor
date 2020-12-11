@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "main": "index.html",
   "scripts": {
-    "start": "parcel serve src/index.html --port 1337",
-    "build": "parcel build src/index.html --out-dir public",
+    "start": "MODE=development parcel serve src/index.html --port 1337",
+    "build": "MODE=production parcel build src/index.html --out-dir public",
     "stage": "now && now rm findaneighbor -ys",
     "prod": "now --prod && now rm findaneighbor -ys"
   },
@@ -25,8 +25,9 @@
   },
   "homepage": "https://github.com/tehpsalmist/findaneighbor#readme",
   "devDependencies": {
-    "parcel": "^1.12.4",
-    "tailwindcss": "^1.9.4"
+    "autoprefixer": "^9.8.6",
+    "parcel": "^2.0.0-beta.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",

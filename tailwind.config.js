@@ -2,17 +2,32 @@ const { theme: { colors } } = require('tailwindcss/defaultConfig')
 
 module.exports = {
   purge: {
-    enable: true,
+    enable: process.env.MODE !== 'development',
     content: ['./src/index.html', './src/**/*.js'],
     options: {
-      whitelist: ['google_translate_element', 'goog-te-gadget', 'goog-te-combo']
+      safelist: ['google_translate_element', 'goog-te-gadget', 'goog-te-combo']
     }
   },
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
         primary: colors.indigo,
-        secondary: colors.teal
+        secondary: {
+          ...{
+            100: '#e6fffa',
+            200: '#b2f5ea',
+            300: '#81e6d9',
+            400: '#4fd1c5',
+            500: '#38b2ac',
+            600: '#319795',
+            700: '#2c7a7b',
+            800: '#285e61',
+            900: '#234e52',
+          },
+          150: '#dbfff9',
+          200: '#d7fbf4'
+        }
       },
       maxHeight: {
         xs: '20rem',
@@ -40,6 +55,8 @@ module.exports = {
       }
     },
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [],
 }

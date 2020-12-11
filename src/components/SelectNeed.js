@@ -10,7 +10,7 @@ export const SelectNeed = ({ need, updateNeed, needs, request, offer, className 
 
         updateNeed(ns => ({ ...ns, [need.id]: { ...ns[need.id], selected: checked } }))
       }} />
-      <span className='ml-2 text-lg text-primary-500 whitespace-no-wrap'>{need.label}</span>
+      <span className='ml-2 text-lg text-primary-500 whitespace-nowrap'>{need.label}</span>
       {request && <em className='w-full sm:ml-2 sm:w-auto'>{need.request_description}</em>}
       {offer && <em className='w-full sm:ml-2 sm:w-auto'>{need.offer_description}</em>}
     </label>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/findaneighbor-w.png'
+import logo from 'url:../assets/findaneighbor-w.png'
 
 export const Heading = ({ className = '', style = {} }) => {
   return <header className='heading flex-col'>

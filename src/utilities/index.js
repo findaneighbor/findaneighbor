@@ -34,3 +34,7 @@ export const externalHref = url => {
 
   return `https://${url}`
 }
+
+export const isDigitRegex = /^\d$/
+export const isEmailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+export const isZipRegex = /^[0-9-]*$/
