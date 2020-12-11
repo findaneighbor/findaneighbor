@@ -40,8 +40,13 @@
     "react-dom": "latest",
     "react-router-dom": "^5.1.2"
   },
-  "browserslist": [
-    "defaults",
-    "not ie 11"
-  ]
+  "app": "public/index.html",
+  "targets": {
+    "main": false,
+    "app": {
+      "engines": {
+        "browsers": "Chrome 70"
+      }
+    }
+  }
 }
