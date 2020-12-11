@@ -4,7 +4,7 @@
   "main": "index.html",
   "scripts": {
     "start": "MODE=development parcel serve src/index.html --port 1337",
-    "build": "MODE=production parcel build src/index.html --out-dir public",
+    "build": "MODE=production parcel build src/index.html --no-scope-hoist",
     "stage": "now && now rm findaneighbor -ys",
     "prod": "now --prod && now rm findaneighbor -ys"
   },
