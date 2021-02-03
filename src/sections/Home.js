@@ -2,13 +2,21 @@ import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandHoldingHeart, faHandsHelping, faUserFriends, faPeopleCarry, faThumbsUp, faGift } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
-import { client, NEED_TYPES } from '../graphql'
-import { useTitle } from '../hooks'
+import { client, NEED_TYPES, SUCCESS_STORY_COUNT } from '../graphql'
+import { useLogError, useTitle } from '../hooks'
+import { useQuery } from 'graphql-hooks'
 
 const title = process.env.NODE_ENV === 'production' ? 'Find A Neighbor' : 'Local | Find A Neighbor'
 
 export const Home = ({ className = '', style = {} }) => {
   useTitle(title)
+
+  const { data, error } = useQuery(SUCCESS_STORY_COUNT)
+
+  useLogError(error)
+  console.log(data)
+
+  const hasSuccessStories = !error && data?.success_story_aggregate?.aggregate?.count
 
   return <>
     <div className='py-16 px-4 flex-center flex-col bg-white'>
@@ -45,12 +53,12 @@ export const Home = ({ className = '', style = {} }) => {
       </p>
       <NavLink className='btn btn-primary' to='/bless'>Bless A Neighbor</NavLink>
     </div>
-    <div className='py-16 px-4 flex-center flex-col bg-primary-500 text-white'>
+    {hasSuccessStories && <div className='py-16 px-4 flex-center flex-col bg-primary-500 text-white'>
       <FontAwesomeIcon icon={faThumbsUp} className='mb-8 text-5xl' />
       <p className='text-justify max-w-xl mb-8'>
         Read about real examples of how your neighbors have already been a blessing to each other.
       </p>
       <NavLink className='btn text-primary-500' to='/success-stories'>Success Stories</NavLink>
-    </div>
+    </div>}
   </>
 }
