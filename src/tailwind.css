@@ -94,11 +94,11 @@ blockquote.after-quote:after {
 }
 
 #google_translate_element {
-  @apply mt-2;
+  @apply absolute top-0 left-0 mt-2 ml-2 bg-opacity-30 bg-white p-1 rounded;
 }
 
-#google_translate_element * {
-  @apply inline;
+.goog-te-gadget * {
+  @apply inline !important;
 }
 
 .goog-te-gadget .goog-te-combo {

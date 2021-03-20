@@ -25,8 +25,9 @@
   },
   "homepage": "https://github.com/tehpsalmist/findaneighbor#readme",
   "devDependencies": {
-    "parcel": "^1.12.4",
-    "tailwindcss": "^1.9.4"
+    "autoprefixer": "^9.8.6",
+    "parcel": "^2.0.0-beta.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
@@ -39,8 +40,13 @@
     "react-dom": "latest",
     "react-router-dom": "^5.1.2"
   },
-  "browserslist": [
-    "defaults",
-    "not ie 11"
-  ]
+  "app": "public/index.html",
+  "targets": {
+    "main": false,
+    "app": {
+      "engines": {
+        "browsers": "Chrome 70"
+      }
+    }
+  }
 }

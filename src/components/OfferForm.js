@@ -3,10 +3,8 @@ import { useQuery, useMutation } from 'graphql-hooks'
 import { NEED_TYPES } from '../graphql/queries'
 import { SelectNeed, TextInput, Checkbox, TextArea } from '.'
 import { ADD_OFFER } from '../graphql'
-
-const isDigitRegex = /^\d$/
-const isEmailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-const isZipRegex = /^[0-9-]*$/
+import { useValidPhone, useValidEmail, useValidZip } from '../hooks'
+import { isDigitRegex } from '../utilities'
 
 export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) => {
   const { data: { need_type: needTypes = [] } = {}, error: queryError } = useQuery(NEED_TYPES)
@@ -101,9 +99,9 @@ export const OfferForm = ({ className = '', style = {}, onSubmit = e => null }) 
   }
 
   useEffect(() => {
-    const realPhone = phone.split('').filter(c => isDigitRegex.test(c)).join('')
+    const realPhone = phone?.split('').filter(c => isDigitRegex.test(c)).join('')
 
-    if (realPhone.charAt(0) === '1') {
+    if (realPhone?.charAt(0) === '1') {
       return setPhone(realPhone.slice(1, 11))
     }
 
