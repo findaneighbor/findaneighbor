@@ -2,7 +2,7 @@ import React from 'react'
 
 export const TextInput = ({ innerRef, type = 'text', placeholder, pattern, label, value, onChange, className = '', required, id }) => {
   return <div className={className}>
-    <label htmlFor={label} className='text-primary-500'>
+    <label htmlFor={id || label} className='text-primary-500'>
       {label} {required && <span className='text-secondary-400'>*</span>}
     </label>
     <input

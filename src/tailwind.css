@@ -66,8 +66,8 @@ blockquote.after-quote:after {
     grid
     justify-center
     items-center
-    row-gap-6
-    col-gap-2
+    gap-y-6
+    gap-x-2
     py-12
     px-4
     text-center
@@ -144,7 +144,7 @@ blockquote.after-quote:after {
 }
 
 .btn:focus {
-  @apply outline-none shadow-outline;
+  @apply outline-none ring;
 }
 
 .btn:disabled {
@@ -212,7 +212,7 @@ blockquote.after-quote:after {
 }
 
 .form-description:focus {
-  @apply outline-none shadow-outline border-blue-300;
+  @apply outline-none ring border-blue-300;
 }
 
 .text-input {
@@ -220,11 +220,11 @@ blockquote.after-quote:after {
 }
 
 .text-input:focus {
-  @apply outline-none shadow-outline border-blue-300;
+  @apply outline-none ring border-blue-300;
 }
 
 .text-input:invalid:not([value=""]) {
-  @apply border-red-400;
+  @apply border-red-300 ring-red-200;
 }
 
 @tailwind utilities;

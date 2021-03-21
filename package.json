@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "main": "index.html",
   "scripts": {
-    "start": "parcel serve src/index.html --port 1337",
-    "build": "parcel build src/index.html --out-dir public",
+    "start": "MODE=development parcel serve src/index.html --port 1337",
+    "build": "MODE=production parcel build src/index.html --no-scope-hoist",
     "stage": "now && now rm findaneighbor -ys",
     "prod": "now --prod && now rm findaneighbor -ys"
   },

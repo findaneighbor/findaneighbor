@@ -16,7 +16,7 @@ export const Partners = ({ className = '', style = {} }) => {
       Local Opportunities
     </h2>
     <ul>
-      {partners.map((partner, i) => <li>
+      {partners.map((partner, i) => <li key={partner.id}>
         {i !== 0 && <hr className='my-12' />}
         <DisplayPartner partner={partner} />
       </li>)}

@@ -13,3 +13,11 @@ export const ADD_OFFER = `
     }
   }
 `
+
+export const ADD_BLESSING_NOMINATION = `
+  mutation AddBlessingNomination ($comments: String, $financial_value: Int!, $neighbor_address: String, $neighbor_name: String!, $neighbor_zip: String!, $nominator_address: String!, $nominator_affiliations: String!, $nominator_email: String, $nominator_name: String!, $nominator_phone: String, $nominator_text_permission: Boolean = false, $nominator_zip: String!, $reason: String!, $timeframe: String!) {
+    insert_blessing_nomination(objects: {comments: $comments, financial_value: $financial_value, neighbor_address: $neighbor_address, neighbor_zip: $neighbor_zip, nominator_address: $nominator_address, nominator_affiliations: $nominator_affiliations, nominator_email: $nominator_email, nominator_name: $nominator_name, nominator_phone: $nominator_phone, nominator_text_permission: $nominator_text_permission, nominator_zip: $nominator_zip, reason: $reason, neighbor_name: $neighbor_name, timeframe: $timeframe}) {
+      affected_rows
+    }
+  }
+`
