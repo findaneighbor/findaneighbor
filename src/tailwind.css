@@ -45,7 +45,7 @@ blockquote.after-quote:after {
 .heading {
   @apply w-full h-full flex justify-center items-center bg-cover bg-primary-500;
   grid-area: heading;
-  background-image: linear-gradient(rgba(102, 126, 234, 0.7), rgba(102, 126, 234, 0.7)), url('/assets/header_quakertown.jpg');
+  background-image: linear-gradient(rgba(102, 126, 234, 0.7), rgba(102, 126, 234, 0.7)), url('./assets/header_quakertown.jpg');
   background-size: cover;
   background-position: top;
   background-attachment: local;
@@ -94,11 +94,11 @@ blockquote.after-quote:after {
 }
 
 #google_translate_element {
-  @apply mt-2;
+  @apply absolute top-0 left-0 mt-2 ml-2 bg-opacity-30 bg-white p-1 rounded;
 }
 
-#google_translate_element * {
-  @apply inline;
+.goog-te-gadget * {
+  @apply inline !important;
 }
 
 .goog-te-gadget .goog-te-combo {
