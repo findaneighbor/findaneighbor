@@ -46,3 +46,13 @@ export const SUCCESS_STORIES = `
     }
   }
 `
+
+export const SUCCESS_STORY_COUNT = `
+  query successStoriesCount {
+    success_story_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+`

@@ -30,7 +30,7 @@ export const DisplayPartner = ({ className = '', style = {}, partner = {} }) => 
     </div>
     {hasNeeds && <div>
       <h4 className='text-lg font-medium mb-2'>Opportunities</h4>
-      {partner.partner_needs.map(need => <div className='mb-4'>
+      {partner.partner_needs.map(need => <div key={need.id} className='mb-4'>
         <h5 className='font-semibold mb-2'>{need.name}</h5>
         <p>{need.description}</p>
       </div>)}

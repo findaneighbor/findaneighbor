@@ -1,2 +1,6 @@
 export * from './useTitle'
 export * from './useLogError'
+export * from './useValidEmail'
+export * from './useValidPhone'
+export * from './useValidZip'
+export * from './useMedia'
