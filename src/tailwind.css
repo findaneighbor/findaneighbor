@@ -45,7 +45,7 @@ blockquote.after-quote:after {
 .heading {
   @apply w-full h-full flex justify-center items-center bg-cover bg-primary-500;
   grid-area: heading;
-  background-image: linear-gradient(rgba(102, 126, 234, 0.7), rgba(102, 126, 234, 0.7)), url('/assets/header_quakertown.jpg');
+  background-image: linear-gradient(rgba(102, 126, 234, 0.7), rgba(102, 126, 234, 0.7)), url('./assets/header_quakertown.jpg');
   background-size: cover;
   background-position: top;
   background-attachment: local;
