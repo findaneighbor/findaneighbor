@@ -42,9 +42,9 @@ export const Home = ({ className = '', style = {} }) => {
     <div className='py-16 px-4 flex-center flex-col bg-primary-500 text-white'>
       <FontAwesomeIcon icon={faPeopleCarry} className='mb-8 text-5xl' />
       <p className='text-justify max-w-xl mb-8'>
-        There are fantastic organizations already busy serving our neighbors in the Upper Bucks region. Check them out and consider how you might support their mission.
+        There are fantastic organizations already busy serving neighbors like you in the Upper Bucks region. Some of them might be providing just the help you are looking for, or maybe you are just the kind of volunteer they need.
       </p>
-      <NavLink className='btn text-primary-500' to='/partners'>View Volunteer Opportunities</NavLink>
+      <NavLink className='btn text-primary-500' to='/partners'>Local Resources</NavLink>
     </div>
     <div className='py-16 px-4 flex-center flex-col bg-white'>
       <FontAwesomeIcon icon={faGift} className='mb-8 text-5xl text-primary-500' />
