@@ -13,7 +13,7 @@ export const Partners = ({ className = '', style = {} }) => {
 
   return <div className='py-12 px-2 sm:px-4 w-full max-w-2xl mx-auto'>
     <h2 className='text-primary-500 text-center text-xl md:text-2xl font-semibold mb-8'>
-      Local Opportunities
+      Local Resources
     </h2>
     <ul>
       {partners.map((partner, i) => <li key={partner.id}>
